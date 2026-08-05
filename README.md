@@ -58,5 +58,5 @@ python software/cross_dataset/scripts/analyze_e32.py \
   --output-dir /path/to/cross_dataset_analysis
 ```
 
-See [docs/CODE_SCOPE.md](docs/CODE_SCOPE.md) for the included components and
+See [docs/RELEASE_SCOPE.md](docs/RELEASE_SCOPE.md) for the included components and
 their boundaries.

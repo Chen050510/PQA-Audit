@@ -1,5 +1,5 @@
 {
-  "release_status": "CODE_ONLY_GITHUB_READY",
+  "release_status": "GITHUB_READY_NO_PAPER",
   "included": [
     "analysis source code",
     "prompt and reader modules",
