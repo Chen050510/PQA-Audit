@@ -72,7 +72,7 @@ def check_entry_points() -> int:
 
 
 def main() -> None:
-    forbidden = [ROOT / "paper", ROOT / "data"]
+    forbidden = [ROOT / "paper"]
     present = [str(path.relative_to(ROOT)) for path in forbidden if path.exists()]
     if present:
         raise AssertionError(f"Code-only release contains forbidden paths: {present}")
@@ -84,7 +84,7 @@ def main() -> None:
         "json_configs_parsed": parse_json_configs(),
         "entry_points_checked": check_entry_points(),
         "paper_included": False,
-        "data_included": False,
+        "sanitized_data_included": True,
         "model_loaded": False,
         "generation_run": False,
     }

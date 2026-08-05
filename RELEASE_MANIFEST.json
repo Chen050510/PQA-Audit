@@ -5,16 +5,18 @@
     "prompt and reader modules",
     "runtime helpers",
     "JSON configurations",
-    "code validation"
+    "sanitized generated outputs",
+    "frozen result summaries",
+    "code and result validation"
   ],
   "excluded": [
-    "generated model outputs",
     "benchmark data",
     "model weights"
   ],
   "verification": {
     "command": "make verify",
     "cpu_only": true,
+    "selected_results_reproduced": true,
     "model_weights_loaded": false,
     "generation_run": false
   }

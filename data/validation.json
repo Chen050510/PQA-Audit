@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "anonymous_software_zip": {
+    "size_bytes": 30354,
+    "sha256": "6a91d32d76d1a04bfb0b53044bb58374ee62e94ef038874c0758fc2c7c70250c"
+  },
+  "anonymous_data_zip": {
+    "size_bytes": 21819252,
+    "sha256": "cae48d07124072614405aa1c2375188ffe47ad265a79ec11af57ddc8e71bd133"
+  },
+  "archive_paths_safe": true,
+  "manifest_checksums_valid": true,
+  "forbidden_identity_tokens_found": 0,
+  "selected_key_counts_reproduced": true,
+  "bootstrap_and_permutation_recomputed": true,
+  "benchmark_source_text_redistributed": false,
+  "gpu_used": false,
+  "model_loaded": false
+}

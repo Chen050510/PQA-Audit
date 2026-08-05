@@ -14,9 +14,13 @@ and repeats the paired comparison across datasets.
 software/
   recurrence/              Recurrence analysis across related phrasings
   cross_dataset/           Paired analysis across supporting datasets
-  reproduce_key_results.py Optional analysis entry point for prepared outputs
+  reproduce_key_results.py Reproduce selected summaries from prepared outputs
+data/
+  anonymous_data.zip       Sanitized generated outputs and frozen summaries
+  validation.json          Validation record for the sanitized archive
 scripts/
   verify_code.py           Source, configuration, and CLI validation
+  verify_results.py        Checksum and offline result reproduction
 ```
 
 ## Installation
@@ -33,14 +37,16 @@ python -m pip install -r requirements.txt
 make verify
 ```
 
-The validation is CPU-only. It verifies the source manifest, compiles every
-Python file, parses every JSON configuration, and checks the command-line entry
-points. It does not download datasets, load model weights, or generate answers.
+The validation is CPU-only. It verifies the source and data checksums, compiles
+every Python file, parses every JSON configuration, checks the command-line entry
+points, and reproduces selected paired summaries from the sanitized outputs. It
+does not download datasets, load model weights, or generate answers.
 
 ## Run the analyses
 
-The analysis programs expect prepared per-question model outputs. Data is not
-included in this repository.
+The analysis programs accept prepared per-question model outputs. The included
+sanitized archive provides the outputs needed by `make verify`; benchmark
+question text and choices are not redistributed.
 
 ```bash
 python software/recurrence/scripts/analyze_e31.py \
