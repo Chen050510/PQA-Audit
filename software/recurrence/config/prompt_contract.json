@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "contract_name": "E31_PROCESS_FAMILY_SHARED_FINAL",
+  "labels": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "conditions": {
+    "D": {
+      "family": "direct",
+      "template": "Answer the multiple-choice question.\n\nQuestion:\n{question}\n\nChoices:\nA. {choice_A}\nB. {choice_B}\nC. {choice_C}\nD. {choice_D}\n\nDo not provide an explanation.\nEnd your response with exactly one line in this format:\nFinal answer: <A|B|C|D>"
+    },
+    "P0": {
+      "family": "process",
+      "action_line": "Reason through the multiple-choice question in English.",
+      "template": "Reason through the multiple-choice question in English.\n\nQuestion:\n{question}\n\nChoices:\nA. {choice_A}\nB. {choice_B}\nC. {choice_C}\nD. {choice_D}\n\nYou may show your reasoning.\nEnd your response with exactly one line in this format:\nFinal answer: <A|B|C|D>"
+    },
+    "P1": {
+      "family": "process",
+      "action_line": "Work through the multiple-choice question step by step in English.",
+      "template": "Work through the multiple-choice question step by step in English.\n\nQuestion:\n{question}\n\nChoices:\nA. {choice_A}\nB. {choice_B}\nC. {choice_C}\nD. {choice_D}\n\nYou may show your reasoning.\nEnd your response with exactly one line in this format:\nFinal answer: <A|B|C|D>"
+    },
+    "P2": {
+      "family": "process",
+      "action_line": "Explain how you solve the multiple-choice question in English.",
+      "template": "Explain how you solve the multiple-choice question in English.\n\nQuestion:\n{question}\n\nChoices:\nA. {choice_A}\nB. {choice_B}\nC. {choice_C}\nD. {choice_D}\n\nYou may show your reasoning.\nEnd your response with exactly one line in this format:\nFinal answer: <A|B|C|D>"
+    }
+  },
+  "process_static_diff_rule": "After removing the first non-empty action line, P0, P1 and P2 templates must be byte-identical.",
+  "chat_wrapper": [
+    {
+      "role": "user",
+      "content": "rendered_prompt"
+    }
+  ],
+  "add_generation_prompt": true,
+  "strict_final_regex": "^Final answer:\\s*([A-D])\\s*$"
+}
