@@ -1,4 +1,4 @@
-# Direction 4: Paired-Question Analysis
+ Paired-Question Analysis
 
 This repository contains code for studying how response instructions change
 which multiple-choice questions a language model answers correctly.
